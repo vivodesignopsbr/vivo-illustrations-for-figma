@@ -1,13 +1,5 @@
 <style>
-  body{padding:0;margin:0}
-  header{background-color:#660099;width:auto;padding:8px 12px;display:block;}
-  h1{color:#fff;font-family:'Open Sans', sans-serif;font-size: 24px;margin:0;padding:0}
-  .container{margin:16px 8px;}
-  .block-icon{border:1px dashed #999;padding:4px;margin-left:4px;display:inline-flex;cursor:pointer;position:relative}
-  .block-icon::before{content:"teste";background:#660099;color:#fff;position:absolute;display:inline-block;opacity:1;font-family:'Open Sans', sans-serif;font-size: 12px;bottom:1;left:0;width:100%;padding:2px 4px;box-sizing:border-box;opacity:0;}
-  .block-icon:hover{border:1px solid #666}
-  .block-icon:hover::before{opacity:1}
-  .icon{width:80px;height:80px;background-size:contain}
+  :root{--main-bg-color:#660099;--main-color:#fff;--font-family:'Open Sans',sans-serif;--border-color:#999;--border-hover-color:#666}body{padding:0;margin:0}header{background-color:var(--main-bg-color);padding:8px 12px}h1{color:var(--main-color);font-family:var(--font-family);font-size:24px;margin:0;padding:0}.container{margin:16px 8px}.block-icon{border:1px dashed var(--border-color);padding:4px;margin-left:4px;display:inline-flex;cursor:pointer;position:relative}.block-icon::before{content:"teste";background:var(--main-bg-color);color:var(--main-color);position:absolute;display:inline-block;font-family:var(--font-family);font-size:12px;bottom:1px;left:0;width:100%;padding:2px 4px;box-sizing:border-box;opacity:0}.block-icon:hover{border:1px solid var(--border-hover-color)}.block-icon:hover::before{opacity:1}.icon{width:80px;height:80px;background-size:contain}
 </style>
 
 <header>
@@ -82,19 +74,27 @@
     </svg>
 </div>
 
+<div class="block-icon">
+  <svg class="icon" width="80" height="48" viewBox="0 0 80 48" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <rect width="80" height="48" fill="url(#pattern0_1044_72938)"/>
+    <defs>
+    <pattern id="pattern0_1044_72938" patternContentUnits="objectBoundingBox" width="1" height="1">
+    <use xlink:href="#image0_1044_72938" transform="matrix(0.0142857 0 0 0.0238095 0 -0.047619)"/>
+    </pattern>
+    <image id="image0_1044_72938" width="70" height="46" xlink:href="data:image/png;base64,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"/>
+    </defs>
+    </svg>
+    
+</div>
+
 </div>
 
 <script>
-
-const element = document.querySelectorAll('.icon');
-
-element.forEach(item => {
-  item.addEventListener('click', function handleClick(event) {
-    let icon = item.outerHTML;
-    console.log(element);
-    parent.postMessage({ pluginMessage: { type: 'create-icon', icon } }, '*')
-    console.log(parent.postMessage);
-  });
+document.addEventListener('click', (event) => {
+  const item = event.target.closest('.icon');
+  if (item) {
+    const icon = item.outerHTML;
+    parent.postMessage({ pluginMessage: { type: 'create-icon', icon } }, '*');
+  }
 });
-
 </script>
